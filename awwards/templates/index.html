@@ -1,9 +1,9 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<div class="container top"style="background:teal;font-size: 20px" >
+<div class="container top" style="background:burlywood;font-size: 20px" >
   <div class="jumbotron" style="background:cadetblue">
-    <h1 style="color:burlywood;font-size: 30px" class="text-center"> Awwards projects </h1>
+    <h1 style="color:burlywood;font-size: 30px" class="text-center"> Awards projects </h1>
   </div>
     <div class="row">
         
@@ -13,7 +13,8 @@
                     <a href="{% url 'profile' %}">{{image.profile.username}}</a>
                 </p>
             <div class="col-md-4" style="margin-bottom: 20px" >
-                <img src="{{image.image.url}}" style="width: 200px; height: 200px;" alt="Image">
+                <p><strong>{{image.title|safe}} </strong></p>
+                <img src="{{image.image.url}}" style="width: 300px; height: 300px;border-radius:30px" alt="Image">
               
                 <ul class="list-inline home-list">
                     <li class="list-inline-item">
@@ -21,9 +22,10 @@
                     </li>
                     <li class="list-inline-item">
                     {% autoescape on %}
-                        <p>{{image.title|safe}} </p>
-                        <p>link:<button class="btn btn-primary">{{image.link|safe}} </button></p>
-                        <p>description:<button class="btn btn-primary">{{image.description|safe}} </button></p>
+                        
+                        <p><strong>description:</strong>{{image.description|safe}} </p>
+                        <strong><p>Link</strong>:<a href="{{image.link|safe}}">{{image.link|safe}}</a></p>
+                        
                     {% endautoescape %}
                     </li>
                 </ul>

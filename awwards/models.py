@@ -44,7 +44,7 @@ class Profile(models.Model):
     profile_image = models.ImageField(upload_to = "profile/",null=True)
     bio = models.TextField(default='',blank = True)
     project = models.ForeignKey(Project,null=True)
-    contact = models.TextField(null = True)
+    contact = models.TextField(default=0,null = True)
     project = models.IntegerField(default=0)
 
 

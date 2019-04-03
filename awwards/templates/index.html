@@ -21,9 +21,9 @@
                     </li>
                     <li class="list-inline-item">
                     {% autoescape on %}
-                        <p>{{image.image_caption|safe}} </p>
-                        <p>comments:<button class="btn btn-primary">{{image.comments|safe}} </button></p>
-                        <p>likes:<button class="btn btn-primary">{{image.likes|safe}} </button></p>
+                        <p>{{image.title|safe}} </p>
+                        <p>link:<button class="btn btn-primary">{{image.link|safe}} </button></p>
+                        <p>description:<button class="btn btn-primary">{{image.description|safe}} </button></p>
                     {% endautoescape %}
                     </li>
                 </ul>

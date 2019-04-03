@@ -17,7 +17,7 @@ class Project(models.Model):
 
 
     def __str__(self):
-        return self.image
+        return self.title
 
     def delete_image(self):
         self.delete()
@@ -66,7 +66,7 @@ class Profile(models.Model):
     
 class Rating(models.Model):
     user = models.ForeignKey(User, null= True)
-    project = models.ForeignKey(Project, null= True)
+    # project = models.ForeignKey(Project, null= True)
     user = models.ForeignKey(User, null= True)
     project = models.ForeignKey(Project, null= True,related_name='rating')
     design= models.IntegerField(default=0)

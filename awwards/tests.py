@@ -5,10 +5,10 @@ class ProjectTestClass(TestCase):
 
     # Set up method
     def setUp(self):
-        self.award= Project()
+        self.gallery= Project()
     # Testing  instance
     def test_instance(self):
-        self.assertTrue(isinstance(self.award,Project))
+        self.assertTrue(isinstance(self.gallery,Project))
 
     # Testing Save Method
     def test_save_method(self):

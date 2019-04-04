@@ -21,7 +21,7 @@ class ProjectTestClass(TestCase):
 class RatingTestClass(TestCase):
     # Set up method
     def setUp(self):
-        self.= Rating()
+        self.gallery= Rating()
     # Testing  instance
     def test_instance(self):
         self.assertTrue(isinstance(self.award,Rating))

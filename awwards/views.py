@@ -57,16 +57,16 @@ def single_image(request,image_id):
 	return render(request, 'my-awwards/single_image.html',{"image":image})
 
 def search_results(request):
-    if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("image")
-        searched_images = Image.search__by_name(search_term)
+    if 'project' in request.GET and request.GET["project"]:
+        search_term = request.GET.get("project")
+        searched_images = Project.search_by_title(search_term)
         message = f"{search_term}"
 
-        return render(request, 'search_image.html',{"message":message,"images": searched_images})
+        return render(request, 'search_project.html',{"message":message,"images": searched_images})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'search_image.html',{"message":message})
+        return render(request, 'search_project.html',{"message":message})
 
 
 @login_required(login_url='/accounts/login/')

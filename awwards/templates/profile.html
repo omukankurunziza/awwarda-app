@@ -8,6 +8,7 @@
 <div class="col-md-12">
     {%for profile in profile%}
 <img src={{profile.profile_image.url}} style="width: 300px; height: 300px; border-radius: 50%; margin-top: 100px;margin-left: 100px ">
+
 <div class="well" style="float: right; margin-top: 170px; margin-right: 300px">
 <div class="">
 
@@ -27,11 +28,7 @@
 <div class="col-md-6">
 <h1>{{image_id.username}}</h1>
 <a href="{{image_id.url}}" class="profile-link">{{image_id.url}}</a>
-{% autoescape on %}
-                        
-                        <p>project:<button class="btn btn-primary">{{image.project|safe}} </button></p>
-                        
-                    {% endautoescape %}
+
 </div>
 </div>
 

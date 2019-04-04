@@ -3,11 +3,13 @@ from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 # Create your models here.
 
+
+
 class Project(models.Model):
     title = models.CharField(max_length = 60,null = True)
     image = models.ImageField(upload_to = "images/",null = True)
     user = models.ForeignKey(User,null=True)
-    
+    # profile =models.ForeignKey(Profile,null=True)
     link = models.CharField(max_length = 70,null = True)
     # likes = models.IntegerField(default=0)
     description = models.TextField(null = True)
@@ -35,10 +37,27 @@ class Project(models.Model):
         image = cls.objects.get(id=id)
         return image
 
+    @classmethod
+    def post_images(cls):
+        images = cls.objects.all()
+        return images 
+
+    
 
 
     class Meta:
         ordering = ['-pub_date']
+    
+    @classmethod
+    def search_by_title(cls,search_term):
+        project = cls.objects.filter(title__icontains = search_term)
+        return project
+
+
+	# @classmethod
+	# def search_by_n(cls,search_term):
+	# 	photos = cls.objects.filter(name__icontains = search_term)
+	# 	return photos
 class Profile(models.Model):
     username = models.CharField(default='User',max_length=60)
     profile_image = models.ImageField(upload_to = "profile/",null=True)
@@ -46,6 +65,7 @@ class Profile(models.Model):
     project = models.ForeignKey(Project,null=True)
     contact = models.TextField(default=0,null = True)
     project = models.IntegerField(default=0)
+    user = models.ForeignKey(User,null=True)
 
 
 
@@ -57,12 +77,6 @@ class Profile(models.Model):
 
     def save_profile(self):
         self.save()
-
-	# @classmethod
-	# def search_by_n(cls,search_term):
-	# 	photos = cls.objects.filter(name__icontains = search_term)
-	# 	return photos
-
     
 class Rating(models.Model):
     user = models.ForeignKey(User, null= True)

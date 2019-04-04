@@ -16,7 +16,7 @@ urlpatterns=[
    
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^upload/profile', views.upload_profile, name='upload_profile'),
-
+    
 
 ]
 

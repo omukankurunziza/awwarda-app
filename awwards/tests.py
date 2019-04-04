@@ -12,7 +12,7 @@ class ProjectTestClass(TestCase):
 
     # Testing Save Method
     def test_save_method(self):
-        self.award.save_image()
+        self.tests.py.save_image()
         description= Project.objects.all()
         self.assertTrue(len(description) > 0)
 

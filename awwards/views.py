@@ -123,14 +123,3 @@ def upload_images(request):
         form = ImageForm() 
     return render(request, 'my-awwards/upload_images.html',{"form" : form})
 
-class ProfileList(APIView):
-    def get(self,request,format=None):
-        all_users = Profile.objects.all()
-        serializers = ProfileSerializer(all_users,many=True)
-        return Response(serializers.data)
-
-class ProjectList(APIView):
-    def get(self,request,format=None):
-        all_projects = Project.objects.all()
-        serializers = ProjectSerializer(all_projects,many=True)
-        return Response(serializers.data)

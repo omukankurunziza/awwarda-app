@@ -24,13 +24,13 @@ class RatingTestClass(TestCase):
         self.gallery= Rating()
     # Testing  instance
     def test_instance(self):
-        self.assertTrue(isinstance(self.award,Rating))
+        self.assertTrue(isinstance(self.gallery,Rating))
 
    
 class ProfileTestClass(TestCase):
     # Set up method
     def setUp(self):
-        self.award= Profile( )
+        self.gallery= Profile( )
     # Testing  instance
     def test_instance(self):
-        self.assertTrue(isinstance(self.award,Profile))
+        self.assertTrue(isinstance(self.gallery,Profile))
